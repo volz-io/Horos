@@ -46,6 +46,8 @@
 	
 	IBOutlet VRController	*presetController;
 	int presetIndex;
+    
+    BOOL _noNeedsDisplay;
 }
 
 - (void)setIsEmpty:(BOOL)empty;

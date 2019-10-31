@@ -404,9 +404,8 @@ extern int splitPosition[ 3];
 	{
 		_processingRequest = YES;
 		[self _sendNewRequestIfNeeded];
-		_processingRequest = NO;    
-		
-		[self _adjustROIs];
+        [self _adjustROIs];
+		_processingRequest = NO;
 		
 		[super drawRect: rect];
 	}
