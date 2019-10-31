@@ -40,7 +40,6 @@
 #endif
 
 #import "XMLController.h"
-#import "XMLControllerDCMTKCategory.h"
 #import "WaitRendering.h"
 #import "DicomFile.h"
 #import "DicomFileDCMTKCategory.h"
@@ -1224,8 +1223,6 @@ extern int delayedTileWindows;
                 //NSStringEncoding encoding = [NSString encodingForDICOMCharacterSet: [[DicomFile getEncodingArrayForFile: srcFile] objectAtIndex: 0]];
 				//[XMLController modifyDicom: params encoding: encoding];
                 
-                
-                
                 NSMutableArray* tagAndValues = [NSMutableArray array];
 				
                 for (int i = 0; i < [modifiedFields count]; i++)
@@ -1233,7 +1230,11 @@ extern int delayedTileWindows;
                     NSString* field = [modifiedFields objectAtIndex:i];
                     NSString* value = [modifiedValues objectAtIndex:i];
                     
-                    [tagAndValues addObject:[NSArray  arrayWithObjects:[DCMAttributeTag tagWithTagString:field],(value?value:@""),nil]];
+                    DCMAttributeTag *tag = [DCMAttributeTag tagWithTagString:field];
+                    if ([tag.vr isEqualToString:@"UN"]) // unknown value representation, try and obtain the VR from the DICOM file
+                        tag.vr = [XMLController VR:tag from:files];
+                    
+                    [tagAndValues addObject:@[ tag, (value? value : @"") ]];
                 }
                 
                 [XMLController modifyDicom:tagAndValues dicomFiles:files];

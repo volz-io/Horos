@@ -2789,7 +2789,7 @@ void info_callback(const char *msg, void *a) {
                         {
                             for( x = 0; x < width; x++)
                             {
-                                pixelR = pixelG = pixelB = NSSwapBigShortToHost( bufPtr16[i]);
+                                pixelR = pixelG = pixelB = NSSwapLittleShortToHost( bufPtr16[i]);
                                 tmpImage[i*3 + 0] = clutRed[ pixelR];
                                 tmpImage[i*3 + 1] = clutGreen[ pixelG];
                                 tmpImage[i*3 + 2] = clutBlue[ pixelB];

@@ -94,7 +94,7 @@
 	N2Image* croppedImage = [[N2Image alloc] initWithSize:cropRect.size inches:NSMakeSize(_inchSize.width/size.width*cropRect.size.width, _inchSize.height/size.height*cropRect.size.height) portion:portion];
 	
 	[croppedImage lockFocus];
-    [self drawAtPoint:NSZeroPoint fromRect:cropRect operation:NSCompositeSourceOver fraction:0];
+    [self drawAtPoint:NSZeroPoint fromRect:cropRect operation:NSCompositeSourceOver fraction:1];
     [croppedImage unlockFocus];
 	
 	return [croppedImage autorelease];

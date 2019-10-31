@@ -112,4 +112,21 @@
 @property(readonly) NSManagedObject *imObj;
 @property(readonly) ViewerController *viewer;
 @property(nonatomic) BOOL editingActivated;
+
+@end
+
+@class DCMAttributeTag;
+
+@interface XMLController (mm)
+
++ (BOOL) modifyDicom:(NSArray*) tagAndValues dicomFiles:(NSArray*) dicomFiles;
+
++ (int) modifyDicom:(NSArray*) params encoding: (NSStringEncoding) encoding;
+
+- (void) prepareDictionaryArray;
+
+- (int) getGroupAndElementForName:(NSString*) name group:(int*) gp element:(int*) el;
+
++ (NSString *)VR:(DCMAttributeTag *)tag from:(NSArray<NSString *> *)paths;
+
 @end

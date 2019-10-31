@@ -468,7 +468,7 @@ jpeg8_NSData_dest (j_compress_ptr cinfo, NSMutableData *aData)
                 usePhotometricInterpretation = NO;
                 if (photometricInterpretation) {
                     // however, if the jpeg color space was assumed, still read the photometricInterpretation from DICOM
-                    if (theCInfo.num_components == 3 && !theCInfo.saw_JFIF_marker && !theCInfo.saw_Adobe_marker)
+                    if (theCInfo.num_components == 3 && !theCInfo.saw_JFIF_marker && !theCInfo.saw_Adobe_marker && theCInfo.jpeg_color_space == JCS_YCbCr)
                         usePhotometricInterpretation = YES; // in this case, libjpeg just assumes the jpeg color space, and it makes sense to still follow the DICOM PhotometricInterpretation
                 }
             }

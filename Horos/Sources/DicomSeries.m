@@ -51,7 +51,7 @@
 #ifdef OSIRIX_VIEWER
 #import "DicomFileDCMTKCategory.h"
 #import "DICOMToNSString.h"
-#import "XMLControllerDCMTKCategory.h"
+#import "XMLController.h"
 #import "ThreadsManager.h"
 #import "NSThread+N2.h"
 #import "VRController.h"

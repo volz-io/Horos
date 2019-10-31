@@ -6423,9 +6423,8 @@ NSInteger studyCompare(ViewerController *v1, ViewerController *v2, void *context
     [self updateTilingViews];
 }
 
-- (void) prepareOpenGL
-{
-    
+- (void)prepareOpenGL {
+    [super prepareOpenGL];
 }
 
 + (void) computePETBlendingCLUT

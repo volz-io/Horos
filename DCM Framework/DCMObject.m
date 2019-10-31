@@ -929,7 +929,9 @@ PixelRepresentation
                     // "7FE0,0010" == PixelData
                     else if (strcmp(tagUTF8, "7FE0,0010") == 0 && tag.isPrivate == NO)
                     {
-                        attr = (DCMPixelDataAttribute *) [[[DCMPixelDataAttribute alloc] initWithAttributeTag:(DCMAttributeTag *)tag 
+                        size_t positionBefore = dicomData.position;
+
+                        attr = (DCMPixelDataAttribute *) [[[DCMPixelDataAttribute alloc] initWithAttributeTag:(DCMAttributeTag *)tag
                         vr:(NSString *)vr 
                         length:(long) vl 
                         data:(DCMDataContainer *)dicomData 
@@ -938,6 +940,11 @@ PixelRepresentation
                         dcmObject:self
                         decodeData:_decodePixelData] autorelease];
                         
+                        if (vl == 0xFFFFFFFF) {
+                            size_t positionAfter = dicomData.position;
+                            vl = positionAfter - positionBefore;
+                        }
+
                         *byteOffset += vl;
                     }
                     else if (vl != 0xFFFFFFFF) // && vl != 0 ANR 2009

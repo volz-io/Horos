@@ -35,7 +35,7 @@
  Ê Ê PURPOSE.
  ============================================================================*/
 
-#import "XMLControllerDCMTKCategory.h"
+#import "XMLController.h"
 #import "BrowserController.h"
 #undef verify
 
@@ -62,9 +62,14 @@
 #include <GDCM/gdcmAnonymizer.h>
 #include <GDCM/gdcmWriter.h>
 
+#include <GDCM/gdcmElement.h>
+#include <GDCM/gdcmGlobal.h>
+#include <GDCM/gdcmDicts.h>
+#include <GDCM/gdcmDictEntry.h>
+
 extern NSRecursiveLock *PapyrusLock;
 
-@implementation XMLController (XMLControllerDCMTKCategory)
+@implementation XMLController (mm)
 
 
 + (BOOL) modifyDicom:(NSArray*) tagAndValues dicomFiles:(NSArray*) dicomFiles
@@ -283,4 +288,35 @@ extern NSRecursiveLock *PapyrusLock;
 	
 	dcmDataDict.unlock();
 }
+
++ (NSString *)VR:(DCMAttributeTag *)ositag from:(NSArray<NSString *> *)paths {
+    gdcm::Tag tag(ositag.group, ositag.element);
+    
+//    gdcm::PrivateDict &pd = gdcm::Global::GetInstance().GetDicts().GetPrivateDict();
+//    if (pd.FindDictEntry(tag)) {
+//        return [NSString stringWithUTF8String:gdcm::VR::GetVRString(pd.GetDictEntry(tag).GetVR())];
+//    }
+    
+    for (NSString *path in paths) {
+        gdcm::Reader reader;
+        reader.SetFileName(path.fileSystemRepresentation);
+        if (!reader.Read())
+            continue;
+        
+        const gdcm::File &file = reader.GetFile();
+        const gdcm::DataSet &ds = file.GetDataSet();
+        
+        if (!ds.FindDataElement(tag))
+            continue;
+        
+        const gdcm::DataElement &de = ds.GetDataElement(tag);
+        
+//        pd.AddDictEntry(tag, gdcm::DictEntry("", "", de.GetVR(), gdcm::VM::VM1));
+        
+        return [NSString stringWithUTF8String:gdcm::VR::GetVRString(de.GetVR())];
+    }
+    
+    return ositag.vr;
+}
+
 @end

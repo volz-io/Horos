@@ -47,7 +47,6 @@
 #import "DicomFile.h"
 #import "DICOMToNSString.h"
 #import "XMLController.h"
-#import "XMLControllerDCMTKCategory.h"
 #include <zlib.h>
 #import "DicomDatabase.h"
 #import "RemoteDicomDatabase.h"

@@ -662,7 +662,9 @@
 	[self adjustScaleValue: savedScaleValue];
 }
 
-- (void)reshape{}
+- (void)reshape{
+    [super reshape];
+}
 
 - (void) setThickSlabXY : (long) newThickSlabX : (long) newThickSlabY
 {

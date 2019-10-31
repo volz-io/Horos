@@ -156,7 +156,6 @@
 		183C865B08563F3A000E6A68 /* SRFlyThruAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C864708563F3A000E6A68 /* SRFlyThruAdapter.m */; };
 		183C865C08563F3A000E6A68 /* VRFlyThruAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 183C864808563F3A000E6A68 /* VRFlyThruAdapter.h */; };
 		183C865D08563F3A000E6A68 /* VRFlyThruAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 183C864908563F3A000E6A68 /* VRFlyThruAdapter.m */; };
-		32E422150C97301600E193CA /* altivecFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 32E422140C97301600E193CA /* altivecFunctions.h */; };
 		4307C62C1A2091900083877C /* url.h in Headers */ = {isa = PBXBuildFile; fileRef = 4307C62B1A2091900083877C /* url.h */; };
 		433F9A801A1B18A500E52C6C /* VTKView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 433F9A7E1A1B18A500E52C6C /* VTKView.mm */; };
 		433F9A811A1B18A500E52C6C /* VTKView.h in Headers */ = {isa = PBXBuildFile; fileRef = 433F9A7F1A1B18A500E52C6C /* VTKView.h */; };
@@ -421,6 +420,7 @@
 		713A003A1467E2DC00194120 /* DicomDir.mm in Sources */ = {isa = PBXBuildFile; fileRef = 713A00381467E2DC00194120 /* DicomDir.mm */; };
 		713A26F617003DF900878CAB /* N2Locker.h in Headers */ = {isa = PBXBuildFile; fileRef = 713A26F417003DF900878CAB /* N2Locker.h */; };
 		713A26F717003DF900878CAB /* N2Locker.m in Sources */ = {isa = PBXBuildFile; fileRef = 713A26F517003DF900878CAB /* N2Locker.m */; };
+		71435A0922116B5600EBECA8 /* altivecFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = A98FFBE40CA92B58000291C8 /* altivecFunctions.h */; };
 		7147C1881644160800A9D095 /* O2ViewerThumbnailsMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 7147C1861644160800A9D095 /* O2ViewerThumbnailsMatrix.h */; };
 		7147C18A1644160800A9D095 /* O2ViewerThumbnailsMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7147C1871644160800A9D095 /* O2ViewerThumbnailsMatrix.mm */; };
 		714943D214D3008B008BCC08 /* NSHost+N2.h in Headers */ = {isa = PBXBuildFile; fileRef = 714943D014D3008B008BCC08 /* NSHost+N2.h */; };
@@ -2857,8 +2857,7 @@
 		CE91370618B51E9C00BDF7F8 /* ExportROIAndKeyImages.tif in Resources */ = {isa = PBXBuildFile; fileRef = CE91370518B51E9C00BDF7F8 /* ExportROIAndKeyImages.tif */; };
 		CE94FC021053FFD3006D92E4 /* CurveFitter.h in Headers */ = {isa = PBXBuildFile; fileRef = CE94FC001053FFD3006D92E4 /* CurveFitter.h */; };
 		CE94FC031053FFD3006D92E4 /* CurveFitter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE94FC011053FFD3006D92E4 /* CurveFitter.m */; };
-		CE96D0E30BEE6F9800C4E397 /* XMLControllerDCMTKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = CE96D0DB0BEE6F9800C4E397 /* XMLControllerDCMTKCategory.h */; };
-		CE96D0E40BEE6F9800C4E397 /* XMLControllerDCMTKCategory.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0DC0BEE6F9800C4E397 /* XMLControllerDCMTKCategory.mm */; };
+		CE96D0E40BEE6F9800C4E397 /* XMLController.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0DC0BEE6F9800C4E397 /* XMLController.mm */; };
 		CE96D0F80BEE71E800C4E397 /* mdfconen.cc in Sources */ = {isa = PBXBuildFile; fileRef = CE96D0F20BEE71E800C4E397 /* mdfconen.cc */; };
 		CE96D0F90BEE71E800C4E397 /* mdfconen.h in Headers */ = {isa = PBXBuildFile; fileRef = CE96D0F30BEE71E800C4E397 /* mdfconen.h */; };
 		CE96D11C0BEE732A00C4E397 /* mdfdsman.h in Headers */ = {isa = PBXBuildFile; fileRef = CE96D1160BEE732900C4E397 /* mdfdsman.h */; };
@@ -3381,7 +3380,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32E422140C97301600E193CA /* altivecFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = altivecFunctions.h; sourceTree = "<group>"; };
 		4307C62B1A2091900083877C /* url.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = url.h; sourceTree = "<group>"; };
 		433F9A7E1A1B18A500E52C6C /* VTKView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VTKView.mm; sourceTree = "<group>"; };
 		433F9A7F1A1B18A500E52C6C /* VTKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VTKView.h; sourceTree = "<group>"; };
@@ -5485,8 +5483,7 @@
 		CE91370518B51E9C00BDF7F8 /* ExportROIAndKeyImages.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ExportROIAndKeyImages.tif; sourceTree = "<group>"; };
 		CE94FC001053FFD3006D92E4 /* CurveFitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurveFitter.h; sourceTree = "<group>"; };
 		CE94FC011053FFD3006D92E4 /* CurveFitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurveFitter.m; sourceTree = "<group>"; };
-		CE96D0DB0BEE6F9800C4E397 /* XMLControllerDCMTKCategory.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = XMLControllerDCMTKCategory.h; sourceTree = "<group>"; };
-		CE96D0DC0BEE6F9800C4E397 /* XMLControllerDCMTKCategory.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = XMLControllerDCMTKCategory.mm; sourceTree = "<group>"; };
+		CE96D0DC0BEE6F9800C4E397 /* XMLController.mm */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.objcpp; path = XMLController.mm; sourceTree = "<group>"; };
 		CE96D0F20BEE71E800C4E397 /* mdfconen.cc */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = mdfconen.cc; path = "Binaries/dcmtk-source/sample apps/dcmdump/mdfconen.cc"; sourceTree = SOURCE_ROOT; };
 		CE96D0F30BEE71E800C4E397 /* mdfconen.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = mdfconen.h; path = "Binaries/dcmtk-source/sample apps/dcmdump/mdfconen.h"; sourceTree = SOURCE_ROOT; };
 		CE96D1160BEE732900C4E397 /* mdfdsman.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = mdfdsman.h; path = "Binaries/dcmtk-source/sample apps/dcmdump/mdfdsman.h"; sourceTree = SOURCE_ROOT; };
@@ -5842,7 +5839,6 @@
 				710EF1F21FD00E29000B555B /* Horos.m */,
 				4307C62B1A2091900083877C /* url.h */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
-				32E422140C97301600E193CA /* altivecFunctions.h */,
 				434B46151A19F2A3008CF8CF /* options.h */,
 				71125D4A215376FC00EB0AA5 /* PathForImage.h */,
 			);
@@ -7044,8 +7040,7 @@
 				ABFA7CD3056056F300963FF8 /* DicomData.h */,
 				AB4A6DF3056EC14E009E6C6E /* XMLController.h */,
 				AB4A6DF4056EC14E009E6C6E /* XMLController.m */,
-				CE96D0DB0BEE6F9800C4E397 /* XMLControllerDCMTKCategory.h */,
-				CE96D0DC0BEE6F9800C4E397 /* XMLControllerDCMTKCategory.mm */,
+				CE96D0DC0BEE6F9800C4E397 /* XMLController.mm */,
 				CE96D0F30BEE71E800C4E397 /* mdfconen.h */,
 				CE96D0F20BEE71E800C4E397 /* mdfconen.cc */,
 				CE96D1160BEE732900C4E397 /* mdfdsman.h */,
@@ -9607,7 +9602,6 @@
 				A90202BE0B980CD60001A00B /* PluginManagerController.h in Headers */,
 				A94469E30BA7FFE7008643E5 /* BLAuthentication.h in Headers */,
 				BFF97D710BDE8BE6008333CF /* ShadingArrayController.h in Headers */,
-				CE96D0E30BEE6F9800C4E397 /* XMLControllerDCMTKCategory.h in Headers */,
 				CE96D0F90BEE71E800C4E397 /* mdfconen.h in Headers */,
 				CE96D11C0BEE732A00C4E397 /* mdfdsman.h in Headers */,
 				A90A04970BF09BA000D00273 /* VRPresetPreview.h in Headers */,
@@ -9621,7 +9615,6 @@
 				ABB230BD0C2F95DD00B38596 /* JPEGExif.h in Headers */,
 				AB64A2DB0C4E0F61000E0981 /* HornRegistration.h in Headers */,
 				CE882AC60C889B6500D4F982 /* XMLRPCMethods.h in Headers */,
-				32E422150C97301600E193CA /* altivecFunctions.h in Headers */,
 				CED2CF980C9B288C0047F123 /* CIADICOMField.h in Headers */,
 				DB5961380CAB447B00809190 /* OSIVoxel.h in Headers */,
 				BF6F18DC0CAD6ACF006DE602 /* FlyThruStepsArrayController.h in Headers */,
@@ -9898,6 +9891,7 @@
 				CEC0BFA015A597DB0012D879 /* ComparativeCell.h in Headers */,
 				CEA4F07915AEA5FE009584C7 /* OSIPACSOnDemandPreferencePane.h in Headers */,
 				71AA5A2E1611F1EB006A6A5F /* JSON.h in Headers */,
+				71435A0922116B5600EBECA8 /* altivecFunctions.h in Headers */,
 				71AA5A2F1611F1EB006A6A5F /* NSObject+SBJSON.h in Headers */,
 				71AA5A311611F1EB006A6A5F /* NSString+SBJSON.h in Headers */,
 				71AA5A331611F1EB006A6A5F /* SBJSON.h in Headers */,
@@ -11329,7 +11323,7 @@
 				A90202BF0B980CD60001A00B /* PluginManagerController.m in Sources */,
 				A94469E40BA7FFE7008643E5 /* BLAuthentication.m in Sources */,
 				BFF97D720BDE8BE6008333CF /* ShadingArrayController.m in Sources */,
-				CE96D0E40BEE6F9800C4E397 /* XMLControllerDCMTKCategory.mm in Sources */,
+				CE96D0E40BEE6F9800C4E397 /* XMLController.mm in Sources */,
 				CE96D0F80BEE71E800C4E397 /* mdfconen.cc in Sources */,
 				CE0DB327182D604900C90B43 /* ThumbnailsListNSWindow.m in Sources */,
 				CE96D11D0BEE732A00C4E397 /* mdfdsman.cc in Sources */,

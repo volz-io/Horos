@@ -133,7 +133,6 @@
 #import "CustomIntervalPanel.h"
 #import "QuicktimeExport.h"
 #import "DICOMToNSString.h"
-#import "XMLControllerDCMTKCategory.h"
 #import "WADOXML.h"
 #import "DicomDir.h"
 #import "CPRVolumeData.h"

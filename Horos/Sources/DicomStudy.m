@@ -57,7 +57,7 @@
 #import "BonjourBrowser.h"
 #import "DicomFileDCMTKCategory.h"
 #import "DICOMToNSString.h"
-#import "XMLControllerDCMTKCategory.h"
+#import "XMLController.h"
 #import "Notifications.h"
 #import "SRAnnotation.h"
 #import "NSFileManager+N2.h"

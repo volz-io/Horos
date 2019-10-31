@@ -53,7 +53,6 @@
 #import "DICOMToNSString.h"
 #import "XMLController.h"
 #import "DicomFileDCMTKCategory.h"
-#import "XMLControllerDCMTKCategory.h"
 #import "N2Debug.h"
 #import "NSUserDefaultsController+N2.h"
 #include <GDCM/gdcmReader.h>
