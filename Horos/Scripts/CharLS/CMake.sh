@@ -5,7 +5,6 @@ cd "$TARGET_NAME"; pwd
 
 env=$(env|sort|grep -v 'LLBUILD_BUILD_ID=\|LLBUILD_LANE_ID=\|LLBUILD_TASK_ID=\|Apple_PubSub_Socket_Render=\|DISPLAY=\|SHLVL=\|SSH_AUTH_SOCK=\|SECURITYSESSIONID=\|COMMAND_MODE=')
 hash="$(git describe --always --tags --dirty) $(md5 -q "$path")-$(md5 -qs "$env")"
-
 set -e; set -o xtrace
 
 cmake_dir="$TARGET_TEMP_DIR/CMake"
@@ -14,6 +13,12 @@ install_dir="$TARGET_TEMP_DIR/Install"
 mkdir -p "$cmake_dir"; cd "$cmake_dir"
 if [ -e Makefile -a -f .cmakehash ] && [ "$(cat '.cmakehash')" = "$hash" ]; then
     exit 0
+fi
+
+if [ -e ".cmakeenv" ]; then
+    echo "Rebuilding.."
+    cat '.cmakeenv'
+    echo "$env"
 fi
 
 command -v cmake >/dev/null 2>&1 || { echo >&2 "error: building $TARGET_NAME requires CMake. Please install CMake. Aborting."; exit 1; }
@@ -55,5 +60,6 @@ cd "$cmake_dir"
 cmake "${args[@]}"
 
 echo "$hash" > "$cmake_dir/.cmakehash"
+echo "$env" > "$cmake_dir/.cmakeenv"
 
 exit 0

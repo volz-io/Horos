@@ -654,7 +654,7 @@
 		992335892009A75A000E10BA /* Horos.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = AB0F3A2C1046BD2B004129DD /* Horos.framework */; settings = {ATTRIBUTES = (); }; };
 		9939F7A91BCB0BF8009FEB69 /* FVTiff.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE73FC808F44724002A395F /* FVTiff.m */; };
 		993DB4A01C0243D50084218A /* FeedbackReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993DB49F1C0243D50084218A /* FeedbackReporter.framework */; };
-		993DB4A11C0244430084218A /* FeedbackReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 993DB49F1C0243D50084218A /* FeedbackReporter.framework */; settings = {ATTRIBUTES = (); }; };
+		993DB4A11C0244430084218A /* FeedbackReporter.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 993DB49F1C0243D50084218A /* FeedbackReporter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		993DB4A31C024FB40084218A /* FeedbackReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993DB49F1C0243D50084218A /* FeedbackReporter.framework */; };
 		994FABF11CEBF25800980A15 /* OnOffSwitchControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 994FABED1CEBF25800980A15 /* OnOffSwitchControl.h */; };
 		994FABF21CEBF25800980A15 /* OnOffSwitchControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 994FABEE1CEBF25800980A15 /* OnOffSwitchControl.m */; };
@@ -3864,6 +3864,7 @@
 		84D7BBE2154A941A007B5A86 /* NSNotificationCenter+N2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSNotificationCenter+N2.mm"; sourceTree = "<group>"; };
 		84E191F91369966A008DCFC8 /* WADODownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WADODownload.h; sourceTree = "<group>"; };
 		84E191FA1369966A008DCFC8 /* WADODownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WADODownload.m; sourceTree = "<group>"; };
+		8B15E1602347CA600010A147 /* Horos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Horos.entitlements; sourceTree = "<group>"; };
 		953DA3D517A1D194000C4BAC /* WebPortalDB 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WebPortalDB 8.xcdatamodel"; sourceTree = "<group>"; };
 		991B8B5B1BB8B279006AF439 /* O2HMigrationAssistant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = O2HMigrationAssistant.png; sourceTree = "<group>"; };
 		992264F92028CE62004C4995 /* homephone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = homephone.framework; path = Binaries/homephone.framework; sourceTree = "<group>"; };
@@ -6158,6 +6159,7 @@
 		710EF1F51FD014E8000B555B /* Horos */ = {
 			isa = PBXGroup;
 			children = (
+				8B15E1602347CA600010A147 /* Horos.entitlements */,
 				71BC461B1F272CA400FD6CCF /* Scripts */,
 				719D3F1A1FB461CA004CFB27 /* Sources */,
 				719D3F261FB46892004CFB27 /* Resources */,
@@ -10702,7 +10704,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh \"Horos/Scripts/$TARGET_NAME/CMake.sh\"";
+			shellScript = "sh \"Horos/Scripts/$TARGET_NAME/CMake.sh\"\n";
 		};
 		71A523232021D2D70065793A /* Make */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -10716,7 +10718,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "sh \"Horos/Scripts/$TARGET_NAME/Make.sh\"";
+			shellScript = "sh \"Horos/Scripts/$TARGET_NAME/Make.sh\"\n";
 		};
 		71A523302021D3520065793A /* Config */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -10939,7 +10941,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#test with codesign -vvv\n#\n#chmod -R 777 \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\n#\n#if [[ ${CONFIGURATION} == \"Release\" ]]; then\n# -f means force to re-sign even if already signed\n#codesign -f -s \"Developer ID Application\" \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/HorosAPI.framework\"\n#codesign --resource-rules Rules.plist -f -s \"Developer ID Application\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\n#echo \"code signed\"\n#fi";
+			shellScript = "#test with codesign -vvv\n#\n#chmod -R 777 \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\n#\n#if [[ ${CONFIGURATION} == \"Release\" ]]; then\n# -f means force to re-sign even if already signed\n#codesign -f -s \"Developer ID Application\" \"$TARGET_BUILD_DIR/$FRAMEWORKS_FOLDER_PATH/HorosAPI.framework\"\n#codesign --resource-rules Rules.plist -f -s \"Developer ID Application\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\n#echo \"code signed\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -13296,7 +13298,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = WGC24S6NKV;
+				CURRENT_PROJECT_VERSION = 20191004;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Binaries,
@@ -13336,7 +13338,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.horosproject.horos;
 				PRODUCT_NAME = Horos;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				SYSTEM_HEADER_SEARCH_PATHS = "$CONFIGURATION_TEMP_DIR/Grok.build/Install/include $CONFIGURATION_TEMP_DIR/GDCM.build/Install/include $CONFIGURATION_TEMP_DIR/OpenSSL.build/Install/include $CONFIGURATION_TEMP_DIR/CharLS.build/Install/include $CONFIGURATION_TEMP_DIR/ITK.build/Install/include $CONFIGURATION_TEMP_DIR/VTK.build/Install/include";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) Binaries/dcmtk-source";
@@ -13572,7 +13573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = WGC24S6NKV;
+				CURRENT_PROJECT_VERSION = 20191004;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Binaries,
@@ -13610,7 +13611,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.horosproject.horos;
 				PRODUCT_NAME = Horos;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				SYSTEM_HEADER_SEARCH_PATHS = "$CONFIGURATION_TEMP_DIR/Grok.build/Install/include $CONFIGURATION_TEMP_DIR/GDCM.build/Install/include $CONFIGURATION_TEMP_DIR/OpenSSL.build/Install/include $CONFIGURATION_TEMP_DIR/CharLS.build/Install/include $CONFIGURATION_TEMP_DIR/ITK.build/Install/include $CONFIGURATION_TEMP_DIR/VTK.build/Install/include";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) Binaries/dcmtk-source";
